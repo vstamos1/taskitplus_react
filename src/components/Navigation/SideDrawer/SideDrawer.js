@@ -16,7 +16,7 @@ const FixedWrapper = styled.header`
   height: 6rem;
   display: none;
 
-  @media ${props => props.theme.mediaQueries.smallest} {
+  @media ${props => props.theme.mediaQueries.small} {
     display: flex;
   }
 `;
@@ -46,7 +46,7 @@ const Menu = styled.div`
   display: none;
   z-index: 10;
 
-  @media ${props => props.theme.mediaQueries.smallest} {
+  @media ${props => props.theme.mediaQueries.small} {
     display: flex;
   }
 `;

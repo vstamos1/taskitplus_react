@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from './Logo.png'
 
 const LogoWrapper = styled.div`
   color: var(--color-white);
@@ -12,7 +13,7 @@ const LogoWrapper = styled.div`
 `;
 
 const Logo = () => {
-  return <LogoWrapper>Productivity</LogoWrapper>;
+  return <LogoWrapper><img src={logo} alt="Task It Plus" /></LogoWrapper>;
 };
 
 export default Logo;

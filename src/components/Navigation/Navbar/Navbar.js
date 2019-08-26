@@ -13,8 +13,10 @@ const FixedWrapper = styled.header`
   left: 0;
   width: 100%;
   height: 6rem;
+  
+  z-index:10
 
-  @media ${props => props.theme.mediaQueries.smallest} {
+  @media ${props => props.theme.mediaQueries.small} {
     display: none;
   }
 `;
@@ -23,6 +25,7 @@ const Wrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: space-between;
+  
 `;
 
 const Navbar = ({ loggedIn }) => {

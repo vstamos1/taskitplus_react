@@ -18,7 +18,16 @@ const MessageWrapper = styled.div`
   bottom: 2rem;
   width: 100%;
   padding: 0 3rem;
+  
 `;
+const AccountWrapper = styled.div`
+   width: 100%;
+   padding: 3rem 1rem;
+  align-self: flex-start;
+  height: 100%;
+  min-height: calc(100vh - 6rem);
+  background-color: var(--color-mainLighter);
+  `
 
 const DeleteWrapper = styled.div`
   cursor: pointer;
@@ -53,9 +62,6 @@ const ProfileSchema = Yup.object().shape({
     .required('Your last name is required.')
     .min(3, 'Too short.')
     .max(25, 'Too long.'),
-  email: Yup.string()
-    .email('Invalid email.')
-    .required('The email is required.'),
   password: Yup.string().min(8, 'The password is too short.'),
   confirmPassword: Yup.string().when('password', {
     is: password => password.length > 0,
@@ -85,7 +91,7 @@ const Profile = ({
 
   if (!firebase.profile.isLoaded) return null;
   return (
-    <>
+    <AccountWrapper>
       <Formik
         initialValues={{
           firstName: firebase.profile.firstName,
@@ -102,7 +108,14 @@ const Profile = ({
         }}
       >
         {({ isSubmitting, isValid }) => (
+
           <FormWrapper>
+          <Heading  size="h2" color="white">
+              {firebase.auth.email}
+            </Heading>
+            <Heading noMargin size="h4" color="white">
+            {firebase.profile.username}
+            </Heading>
             <Heading noMargin size="h1" color="white">
               Edit your profile
             </Heading>
@@ -122,12 +135,12 @@ const Profile = ({
                 placeholder="Your last name..."
                 component={Input}
               />
-              <Field
+              {/* <Field
                 type="email"
                 name="email"
                 placeholder="Your email..."
                 component={Input}
-              />
+              /> */}
               <Field
                 type="password"
                 name="password"
@@ -191,7 +204,7 @@ const Profile = ({
           </Message>
         </MessageWrapper>
       </Modal>
-    </>
+      </AccountWrapper>
   );
 };
 

@@ -1,10 +1,11 @@
 {
-  "name": "todo_rect_firebase",
+  "name": "taskitplus_react_redux_firebase",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "firebase": "^6.4.0",
     "formik": "^1.5.8",
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^5.1.1",
@@ -17,11 +18,14 @@
     "styled-components": "^4.3.2",
     "yup": "^0.27.0"
   },
+  "homepage": "https://github.com/vstamos1/taskitplus_react.git/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

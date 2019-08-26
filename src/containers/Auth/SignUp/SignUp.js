@@ -14,8 +14,17 @@ import * as actions from '../../../store/actions';
 
 const MessageWrapper = styled.div`
   position: absolute;
-  bottom: -2rem;
+  bottom: -2rem;      
 `;
+
+const AuthWrapper = styled.div`
+   width: 100%;
+   padding: 3rem 1rem;
+  align-self: flex-start;
+  height: 100%;
+  min-height: calc(100vh - 6rem);
+  background-color: var(--color-mainLighter);
+`
 
 const SignUpSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -45,6 +54,7 @@ const SignUp = ({ signUp, loading, error, cleanUp }) => {
   }, [cleanUp]);
 
   return (
+    <AuthWrapper>
     <Formik
       initialValues={{
         firstName: '',
@@ -114,6 +124,7 @@ const SignUp = ({ signUp, loading, error, cleanUp }) => {
         </FormWrapper>
       )}
     </Formik>
+    </AuthWrapper>
   );
 };
 

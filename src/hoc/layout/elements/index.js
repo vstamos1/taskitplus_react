@@ -6,6 +6,7 @@ export const Container = styled.div`
   max-width: 140rem;
   margin: 0 auto;
   height: 100%;
+  
 `;
 
 export const FormWrapper = styled.div`

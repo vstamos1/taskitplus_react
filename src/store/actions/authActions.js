@@ -24,6 +24,9 @@ export const signUp = data => async (
       .set({
         firstName: data.firstName,
         lastName: data.lastName,
+        email: data.email,
+        createdOn: Date.now(),
+        imgUrl: "https://firebasestorage.googleapis.com/v0/b/weedeater-8fec2.appspot.com/o/images%2FdefaultUser.png?alt=media&token=21052aca-8142-4fb9-82d1-808e8c3bfbac"
       });
     dispatch({ type: actions.AUTH_SUCCESS });
   } catch (err) {
